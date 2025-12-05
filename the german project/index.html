@@ -5,8 +5,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محصولات فروشگاه</title>
-    <link rel="stylesheet" href="css.css">
+    <title> صفحه اصلی</title>
+    <link rel="stylesheet" href="CSS/css.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap"
@@ -39,13 +39,15 @@
             <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
                 <a href="#">صفحه اصلی</a>
                 <a href="#">درباره ما</a>
-                <a href="#">محصولات</a>
+                <a href="table-of-products.html">محصولات</a>
                 <a href="#">بلاگ</a>
                 <a href="contact.html">تماس با ما</a>
             </nav>
 
             <div class="header-actions">
+
                 <div class="search-box" role="search">
+
                     <input type="search" id="siteSearch" placeholder="جستجو در محصولات...">
                     <button class="icon-btn" id="searchBtn" aria-label="جستجو">🔍</button>
                 </div>
@@ -58,10 +60,16 @@
 
     <h1>به فروشگاه ماشین های جذاب آلمانی خوش آمدین</h1>
 
+
+
+    <div id="product-list-container"></div>
+
+
+
     <div class="product-grid">
         <!-- نمونه محصولات -->
         <div class="product-card">
-            <img src="img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" alt="محصول ۱">
+            <img src="IMG/aaron-huber-8qYE6LGHW-c-unsplash.jpg" alt="محصول ۱">
             <div class="product-info">
                 <h3>BMW X5</h3>
                 <p>موتور ۳ لیتری توربو، گیربکس ۸ سرعته اتومات، مصرف ۸ لیتر در ۱۰۰km</p>
@@ -70,7 +78,7 @@
             <a href="#" class="buy-btn">🛒 خرید</a>
         </div>
         <div class="product-card">
-            <img src="img/tim-meyer-GajoQ7nykAQ-unsplash.jpg" alt="محصول ۲">
+            <img src="IMG/martin-katler-94lAQc7ipNg-unsplash.jpg" alt="محصول ۲">
             <div class="product-info">
                 <h3>Audi A6</h3>
                 <p>موتور ۲ لیتری توربو، سیستم quattro، طراحی لوکس داخلی</p>
@@ -79,7 +87,7 @@
             <a href="#" class="buy-btn">🛒 خرید</a>
         </div>
         <div class="product-card">
-            <img src="img/josh-berquist-_4sWbzH5fp8-unsplash.jpg" alt="محصول ۳">
+            <img src="IMG/josh-berquist-_4sWbzH5fp8-unsplash.jpg" alt="محصول ۳">
             <div class="product-info">
                 <h3>Mercedes C-Class</h3>
                 <p>موتور ۲ لیتری، طراحی اسپرت، امکانات رفاهی کامل</p>
@@ -134,10 +142,9 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="JS/Script1.js"></script>
 
-    <script src="Script1.js">
-     
-  
-    </script>
 </body>
+
 </html>

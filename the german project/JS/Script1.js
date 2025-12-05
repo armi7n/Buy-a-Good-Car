@@ -112,3 +112,84 @@ document.querySelectorAll('.buy-btn').forEach(btn => {
         });
     });
 });
+
+const JSON_FILE_PATH = './products.json';
+const productContainer = document.getElementById('product-list-container');
+
+// AXIOS
+async function loadAndDisplayProducts() {
+    try {
+        const response = await axios.get(JSON_FILE_PATH);
+        const products = response.data;
+        renderProducts(products);
+
+    } catch (error) {
+
+        let errorMessage = 'خطای نامشخص در بارگذاری اطلاعات';
+
+
+        if (error.response) {
+
+            errorMessage = `خطا در بارگذاری (HTTP Status: ${error.response.status}) - فایل یافت نشد یا سرور خطا داد.`;
+        } else if (error.request) {
+
+            errorMessage = `خطا در اتصال: پاسخی از سرور دریافت نشد.`;
+        } else {
+
+            errorMessage = `خطا در اجرای درخواست: ${error.message}`;
+        }
+
+        productContainer.innerHTML = `<p style="color: red; padding: 10px; border: 1px dashed red; text-align: center;">${errorMessage}</p>`;
+        console.error("Axios Error:", error);
+    }
+}
+
+/**
+ * این تابع آرایه محصولات (خودروها) را گرفته و آن‌ها را به HTML تبدیل می‌کند.
+ * @param {Array} products - آرایه‌ای از آبجکت‌های خودرو
+ */
+function renderProducts(products) {
+
+    productContainer.innerHTML = '';
+    products.forEach((product, index) => {
+
+        const productCard = document.createElement('div');
+        productCard.className = 'product-card'; // برای استایل‌دهی در CSS
+
+        // اون کارت هایی که ساختم بعد از اگرفتن داده ها اینجوری ذخیره میشه
+        productCard.innerHTML = `
+            <img src="${product.image_url}" alt="${product.model}" class="product-image">
+            <h3 class="product-model">${product.model}</h3>
+            
+            <p class="product-price">${product.price}</p>
+            <p class="product-detail">**جزئیات:** ${product.detail}</p>
+            
+            <button class="buy-btn" data-product-id="${index + 1}">خرید</button>
+        `;
+
+        // اضافه کردن 
+        productContainer.appendChild(productCard);
+    });
+
+    // چون محصولات پس از بارگذاری داینامیک اضافه شدند، باید event listener را دوباره برای دکمه‌های "خرید" اضافه کنیم.
+    document.querySelectorAll('#product-list-container .buy-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            const productName = btn.parentElement.querySelector('h3').innerText;
+
+            Swal.fire({
+                icon: 'success',
+                title: '✅ محصول اضافه شد!',
+                text: `${productName} به سبد خرید شما اضافه شد.`,
+                confirmButtonText: 'باشه',
+                confirmButtonColor: '#007bff',
+                backdrop: true,
+                timer: 2500,
+                timerProgressBar: true
+            });
+        });
+    });
+}
+
+
+loadAndDisplayProducts();

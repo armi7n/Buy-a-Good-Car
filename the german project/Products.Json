@@ -1,0 +1,20 @@
+[
+    {
+        "image_url": "IMG/aaron-huber-8qYE6LGHW-c-unsplash.jpg",
+        "model": "BMW X5",
+        "price": "قیمت:2,200,000,000",
+        "detail": "موتور ۳ لیتری توربو، گیربکس ۸ سرعته اتومات، مصرف ۸ لیتر در 100km"
+    },
+    {
+        "image_url": "IMG/martin-katler-94lAQc7ipNg-unsplash.jpg",
+        "model": "Audi A6",
+        "price": "قیمت:2,500,000,000",
+        "detail": " موتور 2 لیتری توربو و سیستم quattro و طراخی لوکس داخلی "
+    },
+    {
+        "image_url": "IMG/josh-berquist-_4sWbzH5fp8-unsplash.jpg",
+        "model": "Mercedes C-Class",
+        "price": "قیمت:2,800,000,000",
+        "detail": ">موتور ۲ لیتری، طراحی اسپرت، امکانات رفاهی کام"
+    }
+]

@@ -1,0 +1,330 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    color: #222;
+    direction: rtl;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+
+
+
+}
+
+.topbar {
+    background: linear-gradient(90deg, rgba(42, 123, 155, 1) 32%, rgba(87, 199, 133, 1) 88%, rgba(237, 221, 83, 1) 100%);
+    color: #033;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+.topbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* هدر اصلی */
+header.site-header {
+    background: #fff;
+    border-bottom: 1px solid #eef;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    gap: 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    height: 48px;
+    border-radius: 8px;
+}
+
+.brand .brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand .title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #007bff;
+}
+
+.brand .tag {
+    font-size: 1.06rem;
+    color: #666;
+}
+
+nav.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav.main-nav a {
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+nav.main-nav a:hover {
+    background: rgba(0, 123, 255, 0.06);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f1f3f5;
+    padding: 6px;
+    border-radius: 8px;
+    gap: 8px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline-color: #007bff;
+    padding: 6px;
+    width: 160px;
+}
+
+.cta-btn {
+    background: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.icon-btn {
+    background: transparent;
+    border: 1px solid #e6e9ee;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.hamburger {
+    display: none;
+    border: none;
+    background: transparent;
+    padding: 8px;
+    font-size: 1.1rem;
+}
+
+/* ریسپانسیو */
+@media (max-width:900px) {
+
+    .brand .title,
+    .brand .tag {
+        display: none;
+    }
+
+    .header-inner {
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block;
+        order: -1;
+    }
+
+    .brand {
+        order: 0;
+        gap: 0;
+    }
+
+    .header-actions {
+        order: 1;
+    }
+
+    .header-actions .cta-btn {
+        display: none;
+    }
+
+    .search-box input {
+        display: none;
+    }
+
+    nav.main-nav {
+        position: fixed;
+        right: 0;
+        top: 70px;
+        background: #fff;
+        height: calc(100vh - 70px);
+        width: 260px;
+        padding: 18px;
+        box-shadow: -8px 0 24px rgba(0, 0, 0, 0.08);
+        transform: translateX(110%);
+        transition: .25s ease;
+        border-left: 1px solid #eee;
+        flex-direction: column;
+    }
+
+    nav.main-nav.open {
+        transform: translateX(0);
+    }
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.content-table {
+
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    text-align: center;
+    /* border-collapse: collapse; */
+    margin: 100px auto;
+    font-size: 1em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    min-width: 500px;
+
+}
+
+
+.content-table thead tr {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.content-table th,
+.content-table td {
+    padding: 20px 15px;
+
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 3px solid #007bff;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    color: #007bff;
+}
+
+#siteSearch {
+    display: flex;
+    align-items: center;
+    background: #f1f3f5;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    border: #007bff solid 2px;
+    border-radius: 8px;
+    gap: 10px;
+}
+
+.search-box input ::placeholder {
+    font-weight: bold;
+}
+
+@media (max-width:900px) {
+    /* === تغییرات جدید در اینجا اعمال شد === */
+
+    /* 1. پنهان کردن تیتر اصلی برند و تگ‌لاین */
+    .brand .brand-text .title,
+    .brand .brand-text .tag {
+        display: none;
+    }
+
+    /* 2. مرتب کردن المان‌ها در حالت موبایل (از راست به چپ): همبرگر | برند | اکشن‌ها */
+    .header-inner {
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block;
+        order: -1;
+        /* قرار دادن در سمت راست (شروع فِلِکس) */
+    }
+
+    .brand {
+        order: 0;
+        /* قرار دادن در وسط */
+        gap: 0;
+        /* حذف فاصله بین لوگو و متن (که حالا مخفی شده) */
+    }
+
+    .header-actions {
+        order: 1;
+
+        /* قرار دادن در سمت چپ (پایان فِلِکس) */
+        /* مخفی کردن دکمه CTA در موبایل برای تمیزی بیشتر */
+        .cta-btn {
+            display: none;
+        }
+    }
+
+    /* 3. تغییرات باکس جستجو (پاپ‌آپ شدن) */
+    .search-box input {
+        display: none;
+        /* اینپوت مخفی می‌شود */
+    }
+
+    .search-box {
+        background: transparent;
+        padding: 0;
+    }
+
+    /* === پایان تغییرات جدید === */
+
+    nav.main-nav {
+        position: fixed;
+        right: 0;
+        top: 70px;
+        background: #fff;
+        height: calc(100vh - 70px);
+        width: 260px;
+        padding: 18px;
+        box-shadow: -8px 0 24px rgba(0, 0, 0, 0.08);
+        transform: translateX(110%);
+        transition: transform .25s ease;
+        border-left: 1px solid #eee;
+        flex-direction: column
+    }
+
+    nav.main-nav.open {
+        transform: translateX(0)
+    }
+
+    .header-inner {
+        padding: 10px
+    }
+}
