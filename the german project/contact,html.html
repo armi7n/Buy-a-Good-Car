@@ -1,0 +1,93 @@
+<!DOCTYPE html>ّ
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> تماس با ما</title>
+    <link rel="stylesheet" href="/CSS/css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+<body>
+
+    <div class="topbar" aria-hidden="false">
+        <div class="container">
+            <div class="top-left">
+                <span>📞شماره تماس = 021-28422427 </span>
+                <span>⏰ هر روز 10:00 - 22:00</span>
+            </div>
+            <div class="top-right"></div>
+        </div>
+    </div>
+
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <div class="brand">
+                <img src="img/logo-placeholder.png" alt="لوگو" onerror="this.style.display='none'">
+                <div class="brand-text">
+                    <div class="title">ماشین های آلمانی</div>
+                    <div class="tag">لوکس | اسپرت |با کیفیت</div>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="نمایش منو">☰</button>
+
+            <nav class="main-nav" id="mainNav" aria-label="منوی اصلی">
+                <a href="index.html">صفحه اصلی</a>
+                <a href="#">درباره ما</a>
+                <a href="table-of-products.html">محصولات</a>
+                <a href="#">بلاگ</a>
+                <a href="contact.html">تماس با ما</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="search-box" role="search">
+                    <input type="search" id="siteSearch" placeholder="جستجو در محصولات...">
+                    <button class="icon-btn" id="searchBtn" aria-label="جستجو">🔍</button>
+                </div>
+
+                <button class="icon-btn" aria-label="سبد خرید">🛒</button>
+                <a class="cta-btn" href="#contact">درخواست مشاوره</a>
+            </div>
+        </div>
+    </header>
+    <!--  -->
+    <div class="contact-form-container" id="contact">
+        <h1>تماس با ما</h1>
+        <form class="conatctform" id="contactForm">
+            <div class="form-list">
+                <label for="name">نام </label>
+                <input type="text" id="name" name="name" placeholder="نام و نام خانوادگی خود را وارد کنید">
+                <span class="error-message" id="nameError"></span>
+            </div>
+            <div class="form-list">
+                <label for="email">ایمیل</label>
+                <input type="email" id="email" name="email" placeholder="ایمیل خود را وارد کنید">
+                <span class="error-message" id="emailError"></span>
+            </div>
+            <div class="form-list">
+                <label for="phone">شماره تماس</label>
+                <input type="tel" id="phone" name="phone" placeholder=" شماره تماس خود را وارد کنید">
+                <span class="error-message" id="phoneError"></span>
+            </div>
+            <div class="form-list">
+                <label for="message">پیام</label>
+                <textarea id="message" name="message" placeholder="پیام خود را وارد کنید" rows="4"></textarea>
+                <span class="error-message" id="messageError"></span>
+            </div>
+            <button type="submit" class="submit-button">ارسال پیام</button>
+        </form>
+    </div>
+
+    <script src="/JS/Script.js"></script>
+</body>
+
+</html>
